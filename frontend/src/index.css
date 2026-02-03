@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme {
+  /* Color Palette - Premium Dark "Sentinel" Theme */
+  --color-background: #050505;
+  --color-surface: #0A0A0A;
+  --color-surfaceHighlight: #171717;
+
+  /* Primary: Electric Blue - Technical & Trustworthy */
+  --color-primary: #2563EB;
+  --color-primaryHover: #1D4ED8;
+  --color-primaryLight: rgba(37, 99, 235, 0.1);
+
+  /* Accent: Cyber Teal - For high-confidence verifications */
+  --color-accent: #059669;
+  --color-accentGlow: rgba(5, 150, 105, 0.2);
+
+  /* Danger: Alert Crimson - For incidents */
+  --color-danger: #DC2626;
+  --color-dangerGlow: rgba(220, 38, 38, 0.2);
+
+  /* Typography Colors */
+  --color-text: #F3F4F6;
+  --color-textMuted: #9CA3AF;
+  --color-textDark: #4B5563;
+
+  /* Borders */
+  --color-border: #262626;
+  --color-borderLight: #404040;
+
+  /* Fonts */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Animations */
+  --animate-fade-in: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-slide-up: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-pulse-slow: pulseSlow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulseSlow {
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0.5;
+    }
+  }
+}
+
+/* Base Styles & Reset */
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.05) 0%, transparent 60%),
+    linear-gradient(to bottom, #050505 0%, #050505 100%);
+  min-height: 100vh;
+}
+
+/* Custom Utilities for Glassmorphism & Glows */
+@utility glass {
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@utility glass-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    background: rgba(23, 23, 23, 0.8);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@utility glow-primary {
+  box-shadow: 0 0 30px -10px var(--color-primary);
+}
+
+@utility card-gradient {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.0) 100%);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-textMuted);
+}
