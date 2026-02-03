@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@theme {
+:root {
   /* Color Palette - Premium Dark "Sentinel" Theme */
   --color-background: #050505;
   --color-surface: #0A0A0A;
@@ -29,7 +29,8 @@
   --color-borderLight: #404040;
 
   /* Fonts */
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-sans: 'Outfit', 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Animations */
@@ -37,46 +38,45 @@
   --animate-slide-up: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   --animate-pulse-slow: pulseSlow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
-  @keyframes slideUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes pulseSlow {
-
-    0%,
-    100% {
-      opacity: 1;
-    }
-
-    50% {
-      opacity: 0.5;
-    }
-  }
-}
-
-/* Base Styles & Reset */
-:root {
   color-scheme: dark;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseSlow {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+
+/* Base Styles & Reset */
 body {
   background-color: var(--color-background);
   color: var(--color-text);
@@ -90,28 +90,29 @@ body {
 }
 
 /* Custom Utilities for Glassmorphism & Glows */
-@utility glass {
+
+.glass {
   background: rgba(10, 10, 10, 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-@utility glass-hover {
+.glass-hover {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-  &:hover {
-    background: rgba(23, 23, 23, 0.8);
-    border-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-  }
 }
 
-@utility glow-primary {
+.glass-hover:hover {
+  background: rgba(23, 23, 23, 0.8);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.glow-primary {
   box-shadow: 0 0 30px -10px var(--color-primary);
 }
 
-@utility card-gradient {
+.card-gradient {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.0) 100%);
 }
 

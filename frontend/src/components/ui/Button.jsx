@@ -13,24 +13,24 @@ export function Button({
     ...props
 }) {
     const variants = {
-        primary: 'bg-primary hover:bg-primaryHover text-white shadow-lg shadow-primary/20',
-        secondary: 'bg-surfaceHighlight hover:bg-white/10 text-white border border-white/10',
-        outline: 'border border-primary text-primary hover:bg-primary/10',
-        ghost: 'hover:bg-white/5 text-textMuted hover:text-white',
-        danger: 'bg-danger hover:bg-red-600 text-white',
+        primary: 'bg-[var(--color-primary)] hover:bg-[var(--color-primaryHover)] text-white shadow-lg shadow-[var(--color-primary)]/20 hover:shadow-xl hover:shadow-[var(--color-primary)]/30',
+        secondary: 'bg-[var(--color-surfaceHighlight)] hover:bg-white/10 text-white border border-white/10 hover:border-white/20',
+        outline: 'border border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary)]/10',
+        ghost: 'hover:bg-white/5 text-[var(--color-textMuted)] hover:text-white',
+        danger: 'bg-[var(--color-danger)] hover:bg-red-600 text-white shadow-lg shadow-[var(--color-danger)]/20',
     };
 
     const sizes = {
-        sm: 'px-3 py-1.5 text-sm',
-        md: 'px-5 py-2.5 text-base',
-        lg: 'px-8 py-3.5 text-lg',
-        icon: 'p-2',
+        sm: 'px-4 py-2 text-sm gap-1.5',
+        md: 'px-6 py-3 text-base gap-2',
+        lg: 'px-8 py-4 text-lg gap-2.5',
+        icon: 'p-2.5',
     };
 
     return (
         <button
             className={cn(
-                'inline-flex items-center justify-center rounded-lg transition-all duration-200 font-medium active:scale-95 disabled:opacity-50 disabled:pointer-events-none',
+                'inline-flex items-center justify-center rounded-xl font-semibold transition-all duration-300 ease-out active:scale-[0.98] disabled:opacity-50 disabled:pointer-events-none cursor-pointer',
                 variants[variant],
                 sizes[size],
                 className
