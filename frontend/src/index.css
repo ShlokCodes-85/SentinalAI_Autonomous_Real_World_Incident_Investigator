@@ -29,7 +29,7 @@
   --color-borderLight: #404040;
 
   /* Fonts */
-  --font-sans: 'Outfit', 'Inter', system-ui, sans-serif;
+    --font-sans: 'Nunito', 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
