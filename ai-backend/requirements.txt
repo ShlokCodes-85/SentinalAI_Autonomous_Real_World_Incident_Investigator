@@ -1,0 +1,7 @@
+numpy
+opencv-python
+librosa
+soundfile
+requests
+pillow
+tqdm
